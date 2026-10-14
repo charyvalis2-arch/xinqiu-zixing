@@ -26,7 +26,7 @@ th{background:var(--hl)}td.c{font-size:1.8rem;text-align:center;width:3em}td.y{c
 .q .o{display:block;width:100%;text-align:left;margin:.3em 0;border-radius:8px}
 .ok{background:#2f8f5b!important;color:#fff!important;border-color:#2f8f5b!important}.ng{background:#c0392b!important;color:#fff!important;border-color:#c0392b!important}
 #sc{font-weight:bold;color:var(--ac2)}
-@media print{.np{display:none!important}body{font-size:13px}.mask .m:not(.on){background:none;color:inherit}h2{break-after:avoid}tr,.card{break-inside:avoid}}
+@media print{*{color:#000!important}th{background:none!important}.np{display:none!important}body{font-size:13px}.mask .m:not(.on){background:none;color:inherit}h2{break-after:avoid}tr,.card{break-inside:avoid}}
 .np{display:none!important}.sub.np{display:block!important}</style></head><body><main>
 <h1>心囚　課文與字音字形</h1>
 <p class="sub">國文 1 上 第六課。先讀課文與結構，再依形近字分類整理字音字形，最後做即時測驗。</p>
@@ -69,10 +69,10 @@ const G=[
 ["俠","ㄒㄧㄚˊ",[["見義勇為、抑強扶弱的人，名",["豪「俠」","遊「俠」"]],["見義勇為、抑強扶弱的事，名",["行「俠」仗義"]],["濟弱抑強、見義勇為的，形",["「俠」客","「俠」骨柔情"]]]],
 ["陝","ㄕㄢˇ",[["陝西省的簡稱",["「陝」北"]]]],
 ["狹","ㄒㄧㄚˊ",[["窄小的、不寬廣的，形",["地「狹」人稠","「狹」窄"]],["比喻仇人相遇",["「狹」路相逢"]]]],
-["挾","ㄒㄧㄚˊ",[["控制、脅迫，動",["「挾」持","「挾」天子以令諸侯","要「挾」"]],["懷藏、隱藏，動（帶著仇怨向某人報復）",["「挾」怨報復"]],["持握、持有，動",["帶長劍兮「挾」秦弓","而「挾」重器多也"]],["夾在腋下、夾持，動（比喻做絕對辦不到的事）",["「挾」太山以超北海"]],["倚仗、倚持，動",["「挾」恃","不「挾」長，不「挾」貴","「挾」勢弄權"]]]]]],
+["挾","ㄒㄧㄚˊ",[["控制、脅迫，動",["「挾」持","「挾」天子以令諸侯","要「挾」"]],["懷藏、隱藏，動（帶著仇怨向某人進行報復）",["「挾」怨報復"]],["持握、持有，動",["帶長劍兮「挾」秦弓，首身離兮心不懲","位尊而無功，奉厚而無勞，而「挾」重器多也"]],["夾在腋下、夾持，動",["「挾」太山以超北海（比喻做絕對辦不到的事）"]],["倚仗、倚持，動",["「挾」恃","不「挾」長，不「挾」貴","況且弟兄姊妹「挾」勢弄權，罪惡滔天"]]]]]],
 ["峽・浹",[
 ["峽","ㄒㄧㄚˊ",[["陸塊之間的狹長海道，名",["臺灣海「峽」"]]]],
-["浹","ㄐㄧㄚˊ",[["透澈、浸透，動",["不「浹」於骨髓","汗流「浹」背"]],["通達，動",["「浹」萬物之變"]],["遍，副",["「浹」地交流"]]]]]],
+["浹","ㄐㄧㄚˊ",[["透澈、浸透，動",["不浸於肌膚，不「浹」於骨髓","汗流「浹」背"]],["通達，動",["其所以貫理焉，雖億萬已不足「浹」萬物之變，與愚者若一"]],["遍，副",["山雨忽來，傾盆倒峽，「浹」地交流"]]]]]],
 ["錮・涸・箇・痼",[
 ["錮","ㄍㄨˋ",[["囚禁、監禁，動",["禁「錮」"]]]],
 ["涸","ㄏㄜˊ",[["水乾竭、乾枯，形",["乾「涸」"]],["比喻陷處困境、急需救援的人或物",["「涸」轍之鮒"]]]],
@@ -115,7 +115,7 @@ const G=[
 ["左右（一詞多義）",[
 ["左右","",[["上下、光景；多放在數量詞後，表示約略之數",["三十歲「左右」"]],["幫助、輔助，動",["他是媽媽的「左右」手"]],["身邊",["母親總是陪伴在我「左右」"]],["稱跟從的侍者",["「左右」欲刃相如"]],["影響、控制，動（課文）",["為名利權勢所「左右」"]]]]]]
 ];
-document.getElementById("tb").innerHTML=G.map(([t,rs])=>`<h3>${t}</h3><div class="wrap"><table><tr><th>字</th><th>注音</th><th>釋義</th><th>詞語</th></tr>${rs.map(([c,y,ss])=>ss.map((s,i)=>`<tr>${i?"":`<td class="c" rowspan="${ss.length}">${c}</td><td class="y" rowspan="${ss.length}">${y}</td>`}<td><span class="m">${s[0]||"—"}</span></td><td>${s[1].join("　")||"—"}</td></tr>`).join("")).join("")}</table></div>`).join("");
+document.getElementById("tb").innerHTML=G.map(([t,rs])=>`<h3>${t}</h3><div class="wrap"><table><tr><th>字</th><th>注音</th><th>釋義</th><th>詞語</th></tr>${rs.map(([c,y,ss])=>ss.map((s,i)=>`<tr>${i?"":`<td class="c" rowspan="${ss.length}">${c}</td><td class="y" rowspan="${ss.length}">${y}</td>`}<td><span class="m">${s[0]||"—"}</span></td><td>${s[1].join("、")||"—"}</td></tr>`).join("")).join("")}</table></div>`).join("");
 
 const mk=document.getElementById("mk");
 mk.onclick=()=>{const on=document.body.classList.toggle("mask");mk.classList.toggle("on",on);document.querySelectorAll(".m").forEach(e=>e.classList.remove("on"))};
